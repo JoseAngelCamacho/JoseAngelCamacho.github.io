@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Portfolio BTS SIO : Jose-Angel CAMACHO</title>
+    <link rel="stylesheet" href="style_test.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+</head>
+
+<body>
+    <div id="navbar"></div>
+    <!-- Loader -->
+    <div class="loader-container" id="loader">
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+    </div>
+    <!-- Contenu Principal -->
+    <header>
+        <nav>
+            <div id="navbar"></div>
+            <div class="main-container">
+                <ul>
+                    <li id="logo"><a href="#navbar">Portfolio Jose-Angel CAMACHO</a></li>
+                    <li><a href="#BTS">BTS SIO SISR</a></li>
+                    <li><a href="#veilleTechno">Veille technologique</a></li>
+                    <li><a href="#realisationPro">Realisation professionnel</a></li>
+                    <li><a href="#entreprise">Entreprise</a></li>
+                    <li><a href="#profil">Mon Profil</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div id="imagePrincipale">
+            <h1> Portfolio BTS SIO SISR</h1>
+            <div id="premierTrait"></div>
+            <h2>Jose-Angel CAMACHO</h2>
+        </div>
+
+    </header>
+    <section id="profil">
+        <div id="titreIntro">
+            <h2> La reconversion, sortir de sa zone de confort </h2>
+        </div>
+        <div id="texteIntro">
+            <p>En 2014 après l'obtention de mon BAC Littéraire, il m'est très rapidement apparu qu'il était impossible
+                pour moi de continuer les études, l'envie de quitter les bancs de l'école pour gagner mon premier
+                vrai salaire était trop forte. </br>
+                J'ai donc décidé de me lancer dans la première opportunité qui s'offrait à moi, le monde du BTP. </br>
+                Après quelques années j'ai décidé de me reconvertir, le monde de l'informatique m'a toujours attiré et
+                c'est ainsi que je me suis lancé dans une formation certifiante afin de devenir Technicien Assitant
+                informatique. </br>
+                Formation que j'ai obtenue et qui ma encore plus donné le goût à l'informatique avec l'envie d'en savoir
+                encore plus. Je me suis donc dirigé vers le BTS SIO en option SISR en alternance qui avait pourtant bien
+                commencé, une entreprise trouvé rapidement mais malheuresement certains problème de trésorerie ont
+                contraint mon employeur à se séparer de moi dès le 2ème mois.</br>
+                Mais je n'ai pas perdu de vue mon objectif qui est d'obtenir mon BTS, j'ai donc continué à chercher tout
+                en travaillant. </br>
+                Et à force de determination j'ai fini par réussir à trouver une entreprise, CEGELEC TERTIAIRE IDF et
+                ainsi l'aventure du BTS SIO redevenait une réalité.</p>
+        </div>
+        <section id="parcours">
+            <h2>Mon Parcours</h2>
+            <div class="timeline">
+
+                <!-- Élément 1 -->
+                <div class="timeline-item left">
+                    <div class="content">
+                        <h3>Baccalauréat </h3>
+                        <p>Littéraire / Option : Langues Etrangère </br>
+                            Lycée Marie Laurencin - Mennecy 91540 (2011-2014)</p>
+                    </div>
+                </div>
+
+                <!-- Élément 2 -->
+                <div class="timeline-item right">
+                    <div class="content">
+                        <h3>Formation Technicien Assistant Informatique</h3>
+                        <p>AFCI - Evry Courcouronnes 91000 (2023)</p>
+                    </div>
+                </div>
+
+                <!-- Élément 3 -->
+                <div class="timeline-item left">
+                    <div class="content">
+                        <h3>BTS SIO (Option SISR)</h3>
+                        <p>Facultés des Métiers de l'Essonne, Massy 91377 (2024-2026)</p>
+                    </div>
+                </div>
+                <div class="container-boutons">
+                    <button class="btn-pdf" onclick="ouvrirPdf('CV_PORTFOLIO.pdf', 'CV')">
+                        📄 Mon CV
+                    </button>
+                </div>
+
+                <div id="overlay-modale" class="modal-overlay" onclick="fermerModale(event)">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <span id="titre-document">Document</span>
+                            <button class="btn-close" onclick="fermerModale(event, true)">&times;</button>
+                        </div>
+
+                        <div class="modal-body">
+                            <iframe id="visionneuse-pdf" src=""></iframe>
+                        </div>
+
+                    </div>
+                </div>
+
+                <script>
+                    function ouvrirPdf(url, titre) {
+                        const modal = document.getElementById('overlay-modale');
+                        const iframe = document.getElementById('visionneuse-pdf');
+                        const titreSpan = document.getElementById('titre-document');
+
+                        // 1. On met à jour le titre et la source du PDF
+                        titreSpan.textContent = titre;
+                        iframe.src = url;
+
+                        // 2. On affiche la modale
+                        modal.style.display = 'flex';
+                    }
+
+                    function fermerModale(event, force = false) {
+                        const modal = document.getElementById('overlay-modale');
+
+                        // On ferme si on clique sur le fond gris (overlay) OU sur la croix (force)
+                        if (event.target === modal || force) {
+                            modal.style.display = 'none';
+                            document.getElementById('visionneuse-pdf').src = ''; // Stop le chargement
+                        }
+                    }
+                </script>
+        </section>
+
+        <div id="categorie">
+            <div class="imagesEntreprise">
+                <h4> Voici mon entreprise</h4>
+                <a href="#entreprise"><img src="images/Cegelec-Tertiaire-IDF2.png"
+                        alt="logo_entreprise"></a>
+            </div>
+            <div class="imagesEntreprise">
+                <h4> Réalisations professionnelles</h4>
+                <a href="#realisationPro"><img src="images/Missions.png" alt="Missions"></a>
+            </div>
+            <div class="imagesEntreprise">
+                <h4> Veille technologique</h4>
+                <a href="#veilleTechno"><img src="images/veille_techno.png" alt="logo_entreprise"></a>
+            </div>
+        </div>
+        <section id="entreprise">
+
+            <div id="texteIntro">
+                <h2> Je vous présente Cegelec TERTIAIRE IDF </h2>
+                <div id="logo_cegelec">
+                    <div class="imagesEntreprise">
+
+                        <a href="https://www.cegelec-tertiaireidf.com/" target="_blank"><img
+                                src="images/ETOILE-PICTO-Cegelec-Tidf-RVB-287x300.webp"
+                                alt="logo_entreprise"></a>
+                    </div>
+
+        </section>
+        <div id="texteIntroEntreprise">
+            <p>
+                L’histoire de Cegelec est intimement liée, depuis maintenant cent ans, au développement des secteurs de
+                l’énergie en France et en Europe. </br>
+                Son origine remonte à 1913, année de naissance de la CGEE (Compagnie Générale d’Entreprises Électriques)
+                qui, au fil des ans, augmente son savoir-faire pour devenir un des leaders sur les marchés liés à
+                l’énergie.
+            </p>
+        </div>
+        <section class="section block-reference --custom-content">
+            <div class="container " data-scrolltrigger-section>
+
+
+
+
+
+
+                <div class="reference-compound-slider js-slider-reference-compound grid">
+
+
+                    <div class="reference-compound-item">
+                        <a class="reference-compound-illus-wrapper">
+                            <img decoding="async" src="images/ES.webp" alt="" width="999" height="966"
+                                class="reference-compound-illus lazy">
+                            <div class="reference-compound-txt">
+                                Offre une solution complète en Courants Forts et Courants Faibles et une expertise sur
+                                tous les systèmes de sécurisation des biens et des personnes.
+                            </div>
+                        </a>
+
+
+                    </div>
+
+
+                    <div class="reference-compound-item">
+                        <a class="reference-compound-illus-wrapper">
+                            <img decoding="async" src="images/Plomberie.webp" alt="" width="993"
+                                height="966" class="reference-compound-illus lazy">
+                            <div class="reference-compound-txt">
+                                Réalisation de réseaux, de locaux techniques de plomberie et d’équipements sanitaires,
+                                mais aussi d’installations de climatisation, ventilation et chauffage.
+                            </div>
+                        </a>
+
+
+                    </div>
+
+
+                    <div class="reference-compound-item">
+                        <a class="reference-compound-illus-wrapper">
+                            <img decoding="async" src="images/MACRO-LOTS-TECHNIQUES.webp" alt=""
+                                width="999" height="966" class="reference-compound-illus lazy">
+                            <div class="reference-compound-txt">
+                                Solutions sur-mesure multicompétences, en
+                                Chauffage-Ventilation-Climatisation-Désenfumage, Plomberie, Courant Fort et Courant
+                                Faible, en mono-lot et macro-lots.
+                            </div>
+                        </a>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </section>
+
+
+        <section class="section block-reference --custom-content">
+            <div class="container " data-scrolltrigger-section>
+
+
+
+
+
+
+                <div class="reference-compound-slider js-slider-reference-compound grid">
+
+
+                    <div class="reference-compound-item">
+                        <a class="reference-compound-illus-wrapper">
+                            <img decoding="async" src="images/PS.webp" alt="" width="999" height="966"
+                                class="reference-compound-illus lazy">
+                            <div class="reference-compound-txt">
+                                Experte en Courant Fort et en Courant Faible, dans le neuf et en réhabilitation.
+                                L’entreprise met en œuvre des solutions électriques intégrées.
+                            </div>
+                        </a>
+
+
+                    </div>
+
+
+                    <div class="reference-compound-item">
+                        <a class="reference-compound-illus-wrapper">
+                            <img decoding="async" src="images/Fluide-2.webp" alt="" width="996"
+                                height="967" class="reference-compound-illus lazy">
+                            <div class="reference-compound-txt">
+                                La technicité des équipes et leur engagement sans faille dans les projets font de
+                                Cegelec Tertiaire IdF Fluides un acteur fiable pour mener à bien des réalisations
+                                complexes en Chauffage, Ventilation, Climatisation et Désenfumage et Plomberie.
+                            </div>
+                        </a>
+
+
+                    </div>
+
+
+                    <div class="reference-compound-item">
+                        <a class="reference-compound-illus-wrapper">
+                            <img decoding="async" src="images/Grands-projets.webp" alt="" width="999"
+                                height="966" class="reference-compound-illus lazy">
+                            <div class="reference-compound-txt">
+                                Passionnée par son métier, l’équipe Grands Projets s&rsquo;attache à transformer vos
+                                grands projets en grands succès.
+                            </div>
+                        </a>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </section>
+
+
+        <section class="section block-reference --custom-content">
+            <div class="container " data-scrolltrigger-section>
+
+
+
+
+
+
+                <div class="reference-compound-slider js-slider-reference-compound grid">
+
+
+                    <div class="reference-compound-item">
+                        <a class="reference-compound-illus-wrapper">
+                            <img decoding="async" src="images/DATA-CENTER.webp" alt="" width="1832"
+                                height="1198" class="reference-compound-illus lazy">
+                            <div class="reference-compound-txt">
+                                Spécialisée dans les projets de Data Center, notre positionnement en tant qu’entreprise
+                                générale permet d’offrir à nos clients un interlocuteur unique pour des projets « Clés
+                                en main ».
+                            </div>
+                        </a>
+
+
+                    </div>
+
+
+                    <div class="reference-compound-item">
+                        <a class="reference-compound-illus-wrapper">
+                            <img decoding="async" src="images/contracting-1.webp" alt="" width="1833"
+                                height="1197" class="reference-compound-illus lazy">
+                            <div class="reference-compound-txt">
+                                Expert dans le pilotage et la réalisation de projets hors normes. La maîtrise des
+                                compétences en études, en travaux et en mise en service fait notre différence.
+                            </div>
+                        </a>
+        </section>
+        <section id="realisationPro">
+            <h2> Mes réalisations professionnelles </h2>
+
+            <div class="conteneur-projet">
+                <div class="realisation-item">
+                    <a href="images/Manuel PPE.docx"><img src="images/MediaWiki-2020-logo.svg"
+                            alt="logo_mediawiki"></a>
+                </div>
+
+                <div class="description-projet1">
+                    <h4>Installation d'un Mediawiki sous Debian</h4>
+                    <p>
+                        Dans le cadre d'un PPE, j'ai conçu et mis en place l'infrastructure complète <br> nécessaire à
+                        la mise en place d'un site Mediawiki. <br>
+                        Il fallut donc :
+                    </p>
+                    <ul>
+                        <li>- Mettre en place le serveur web (Apache2) </li>
+                        <li>- Installer PHP et ses composants </li>
+                        <li>- Installer la base de données (MariaDB)</li>
+                        <li>- Configurer Mediawiki</li>
+                    </ul>
+                    <button class="btn-pdf" onclick="ouvrirPdf('Manuel PPE.pdf', 'Manuel')">
+                        📄 Procédure Mediawiki sous Debian
+                    </button>
+                </div>
+            </div>
+            <div id="overlay-modale" class="modal-overlay" onclick="fermerModale(event)">
+            </div>
+
+        </section>
+        <section id="realisationPro2">
+            <div class="realisation-item">
+                <a href=""><img src="images/photo_dem_portfolio.png" alt="logo_mediawiki"></a>
+            </div>
+            <div class="description-projet1">
+                <h4>Brassage de bornes wifi pour les nouveau locaux de CEGELEC TERTIAIRE IDF</h4>
+                <p>
+                    Durant le mois d'Août mon entreprise a déménagé et durant cette opération, en plus des tâches qui
+                    m'avait été confié tel que : assurer la continuité du support,
+                    </br>la mise en place de postes de travail, installation des Click Share pour les salles de réunion,
+                    désinstallation serveur, pare feu, routeur, j'ai pu brasser et mettre en route des bornes wifi.
+                    </br>
+                </p>
+                <ul>
+                    <li>- Contrôler le suivi du plan entre les prise murales et la baie </li>
+                    <li>- Raccordement des ports au switchs </li>
+                    <li>- Verification de la connectivité et de l'état opérationnel des bornes</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="realisationPro2">
+            <div class="realisation-item">
+                <a href=""><img src="images/btssiosisr.jpg" alt="logo_mediawiki"></a>
+            </div>
+            <div class="description-projet1">
+                <h4>Support Informatique N1 & N2 : Logiciels & Matériel</h4>
+                <p>
+                    Lors de mon alternance, j’ai eu la responsabilité d’assurer le support informatique de mon
+                    entreprise (environ 420 collaborateurs). </br>
+                    Cette mission m’a énormément apporté, tant sur le plan technique que sur le plan humain : gestion
+                    des utilisateurs en situation critique </br> (par exemple : ordinateur hors service à 17h30 alors
+                    qu’un devis doit être produit et envoyé avant 20h).
+                    Mes missions consistaient également à préparer l’ensemble du matériel informatique pour l’arrivée de
+                    nouveaux collaborateurs (PC, postes de travail, smartphones).
+                </p>
+            </div>
+            
+        </section>
+        <section id="veilleTechno"></section>
+        <h2>Ma veille Informatique</h2>
+
+        <section id="veilleTechno">
+            <div class="realisation-item">
+                <a href="#"><img src="images/veille_techno.png"></a>
+            </div>
+
+            <div class="description-projet1">
+                <p>
+                    La veille informatique est une activitée primordial dans le domaine informatique que l'on soit du
+                    côté programmation ou du côté systèmes, réseaux. <br>
+                    En effet, dans un monde ultra-connecté l'informatique est en constante évolution. A l'image des
+                    mises à jours qui apportent les derniers correctifs de performance, de sécurité la veille
+                    informatique en est sont extension pour les utilisateurs
+                </p>
+            </div>
+        </section>
+        <h2 class="titre-section">Newsletter :</h2>
+
+        <div id="categorie2">
+            <div class="imagesEntreprise">
+                <h4>IT-Connect</h4>
+                <a href="https://www.it-connect.fr/tag/lets-encrypt/" target="_blank">
+                    <img src="images/html-css-collage-concept-with-person.webp" alt="logo_entreprise">
+                </a>
+            </div>
+
+            <div class="imagesEntreprise">
+                <h4>Google Alerts</h4>
+                <a href="https://www.journaldunet.com/cybersecurite/1545927-huit-ans-apres-l-emergence-d-une-cybercrimalite-de-masse-la-cyber-resilience-reste-le-parent-pauvre-de-la-cybersecurite/"
+                    target="_blank">
+                    <img src="images/GOOGLE_ALERT.png" alt="Missions">
+                </a>
+            </div>
+
+            <div class="imagesEntreprise">
+                <h4>01.net</h4>
+                <a href="https://www.01net.com/actualites/gare-wifi-publics-pourquoi-google-conseille-jamais-connecter.html?utm_source=newsletter&utm_medium=email&utm_campaign=01netDaily25_11_24"
+                    target="_blank">
+                    <img src="images/01NET.png" alt="Veille technologique">
+                </a>
+            </div>
+        </div>
+
+        <h2 class="titre-section">Flux RSS :</h2>
+
+        <div id="categorie2">
+            <div class="imagesEntreprise">
+                <h4>Google Alerts</h4>
+                <a href="https://feedly.com/i/collection/content/user/969f3d76-b8fd-4200-8ae3-28a5a7745033/category/c08a497e-2645-4648-b2d2-64ca829af96c" target="_blank">
+                    <img src="images/FLUX_LEMONDE_IT.png" alt="Missions">
+                </a>
+            </div>
+
+            <div class="imagesEntreprise">
+                <h4>01.net</h4>
+                <a href="https://feedly.com/i/collection/content/user/969f3d76-b8fd-4200-8ae3-28a5a7745033/category/c08a497e-2645-4648-b2d2-64ca829af96c" target="_blank">
+                    <img src="images/Flux_IT.png" alt="Veille technologique">
+                </a>
+            </div>
+        </div>
+
+        <h2 class="titre-section">Vidéos Micode / Underscore :</h2>
+
+        <div id="categorie2">
+            <div class="imagesEntreprise">
+                <h4></h4>
+                <a href="https://www.youtube.com/watch?v=gXtp6C-3JKo&t=45s/" target="_blank">
+                    <img src="images/micodev2.png" alt="logo_entreprise">
+                </a>
+            </div>
+
+            <div class="imagesEntreprise">
+                <h4></h4>
+                <a href="https://www.youtube.com/watch?v=UZjPHnN482M&t=1362s"
+                    target="_blank">
+                    <img src="images/underscore.png" alt="Veille technologique">
+                </a>
+            </div>
+        </div>
+    </section>
+    <a href="#BTS"></a>
+    <section id="BTS">
+        <div id="BTSSIO">
+            <h2> Le BTS SIO SISR </h2>
+        </div>
+        <div id="texteIntro">
+            <p>Le BTS SIO (Service Informatique aux Organisations) est une formation sur deux ans destinées aux
+                personnes dont l'objectif est d'intégrer le domaine de l'informatique </br>
+                Ce diplôme permet d'obtenir les compétences pour devenir un professionnel de l'informatique capable de
+                répondre aux besoins des entreprises tel que : assistance technique, administration de systèmes,
+                developpement d'applications. </br>
+                Ce BTS ce décline en deux options : SISR ou SLAM et peut s'effectuer en alternance ou bien en initial.
+            </p>
+        </div>
+    </section>
+    <section id="options">
+
+        <div class="conteneur-projet">
+            <div class="realisation-item">
+                <img src="images/btssiosisr.jpg" alt="logo_mediawiki">
+            </div>
+
+            <div class="description-projet1">
+                <h4>Option SISR (Solutions d'infrastructures, systèmes et réseaux) </h4>
+                <p>
+                    Cette option met l'accent sur le côté gestion de réseaux et systèmes mais également une part
+                    d'assistance technique. Elle permet d'obtenir les compétences suivantes </br>
+                </p>
+                <ul>
+                    <li>- Gestion de parc informatique </li>
+                    <li>- Administration des systèmes et réseaux </li>
+                    <li>- Assistance technique</li>
+                </ul>
+            </div>
+        </div>
+        <div class="conteneur-projet">
+            <div class="realisation-item">
+                <img src="images/btssioslam.jpg" alt="logo_mediawiki">
+            </div>
+
+            <div class="description-projet1">
+                <h4>Option SLAM (Solutions logiciels et applications métiers)</h4>
+                <p>L'option SLAM est axée sur le developpement d'applications, logiciels. </br>
+                    Les étudiants y apprennent à concevoir, programmer et maintenir des applications web, mobiles ou de
+                    bureau. </br>
+                </p>
+                <ul>
+                    <li>- Developpement d'applications </li>
+                    <li>- Gestion base de données </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <!-- Formulaire -->
+        <h2>Pour me contacter</h2>
+        <form action="https://formspree.io/f/meobwqzp" method="POST">
+
+            <input type="text" name="entreprise" placeholder="Nom de l'entreprise" required>
+
+            <input type="email" name="email" placeholder="E-mail" required>
+
+            <textarea name="message" placeholder="Votre message ici ..." required></textarea>
+
+            <button type="submit">Envoyer</button>
+
+        </form>
+        <div id="deuxiemeTrait"></div>
+        <div id="copyrightEtIcons">
+            <div id="copyright">
+                <span>©TitusCorp 2025</span>
+            </div>
+            <div id="icons">
+                <a href="https://www.linkedin.com/in/jose-angel-camacho-2749b2277/"><i class="fa fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener("load", () => {
+            const loader = document.getElementById("loader");
+            // Attendre un petit délai pour laisser finir l'animation
+            setTimeout(() => {
+                loader.classList.add("fade-out");
+            }, 2600); // 2.6s = durée anim (2.5s) + petit tampon
+        });
+    </script>
+
+    <script>
+        window.addEventListener("scroll", function () {
+            const items = document.querySelectorAll(".timeline-item");
+            const triggerBottom = window.innerHeight * 0.85; // quand l’élément entre à 85% de la hauteur visible
+
+            items.forEach(item => {
+                const boxTop = item.getBoundingClientRect().top;
+
+                if (boxTop < triggerBottom) {
+                    item.classList.add("show");
+                } else {
+                    item.classList.remove("show");
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
