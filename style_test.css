@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css?family=Advent+Pro|Dancing+Script&display=swap');
 
 body {
@@ -93,6 +94,7 @@ html {
   transform: translateY(0);
 }
 
+/* Si tu veux alterner les directions */
 .timeline-item.left {
   transform: translateX(-100px);
 }
@@ -178,6 +180,29 @@ html {
   font-size: 0.85rem;
 }
 
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .timeline::after {
+    left: 20px;
+  }
+  .timeline-item {
+    width: 100%;
+    padding-left: 60px;
+    padding-right: 25px;
+  }
+  .timeline-item::before {
+    left: 12px;
+  }
+  .timeline-item.right {
+    left: 0%;
+  }
+    .imagePrincipal {
+        background-attachment: scroll; /* Annule l'effet fixed sur mobile */
+        background-position: center;
+    }
+}
+
+
 /* **************** IMAGE PRINCIPALE ************* */
 #imagePrincipale {
   padding-top: 60px;
@@ -208,6 +233,9 @@ h3 {
 #presentation {
   background-color: #FFFAE1;
   padding: 10px 0px 100px 0;
+}
+#texteIntro {
+  padding: 0px 20%;
 }
 
 /* --- STYLE GÉNÉRAL DES BOUTONS --- */
@@ -356,9 +384,10 @@ iframe {
     border-radius: 10px;
 }
 
+/* Ton conteneur principal (corrigé) */
 #realisationPro {
-  text-align: center;
-  margin-bottom: 50px;
+  text-align: center; /* Pour centrer votre h2 "Mes réalisations professionnelles" */
+  margin-bottom: 50px; /* Optionnel : pour l'espacement global */
   flex-wrap: wrap;
   justify-content: flex-start; 
   gap: 20px; 
@@ -368,9 +397,9 @@ iframe {
 
 .conteneur-projet {
     display: flex;
-    justify-content: center; 
-    align-items: flex-start; 
-    gap: 50px; 
+    justify-content: center; /* Centre le bloc image + texte sur la page */
+    align-items: flex-start; /* Aligne l'image et le texte par le haut */
+    gap: 50px; /* Ajustez cette valeur pour l'espace entre le logo et le texte */
 }
 
 #realisationPro2 {
@@ -393,68 +422,76 @@ iframe {
 
 #options {
   display: flex;
-  flex-direction: column; 
-  gap: 60px; 
+  flex-direction: column; /* Empile les projets verticalement */
+  gap: 60px; /* Espace entre le projet 1 et le projet 2 */
   margin-top: 40px;
   padding: 30px 10%;
 }
 
 .conteneur-projet {
-  display: flex; 
+  display: flex; /* Aligne le logo et le texte côte à côte */
   flex-direction: row; 
-  align-items: flex-start; 
-  gap: 40px; 
+  align-items: flex-start; /* Aligne le texte en haut par rapport au logo */
+  gap: 40px; /* Espace entre le logo et le texte */
 }
 
+/* Optionnel : pour s'assurer que le texte prend bien le reste de la place */
 .description-projet1 {
   flex: 1;
-  font-size: 2rem;
 }
 
+/* Le NOUVEAU bloc pour 1 item (texte + logo) */
 .realisation-item {
   display: flex;
   flex-direction: column; 
   align-items: center; 
   gap: 15px;
-  width: 10%;          
-  max-width: 1100px;    
-  margin: 0 auto; /* Correction du margin centré */       
-  padding: 0 20px;      
+  width: 10%;          /* Prend la largeur dispo */
+  max-width: 1100px;    /* Empêche de s'étirer à l'infini sur les grands écrans */
+  margin: 0 +150px;       /* La magie : 0 en haut/bas, AUTO à gauche/droite pour centrer */
+  padding: 0 20px;      /* Une petite marge de sécurité sur mobile */ 
 }
 
+/* Optionnel : pour contrôler la taille du logo */
 .realisation-item img {
-  max-width: 270px; 
+  max-width: 270px; /* Ajuste la taille pour correspondre au logo MediaWiki */
   height: auto;      
   padding: 70px;      
 }
 
+.description-projet1 {
+    flex: 1;                /* Le texte prendra toute la place restante disponible */
+    font-size: 2rem;
+}
+
+/* Nouveau style pour le titre "Mes newsletter :" */
 .titre-section {
-    text-align: center; 
-    margin-top: 40px;   
-    margin-bottom: 10px; 
-    font-size: 24px;    
+    text-align: center; /* Centre le texte horizontalement */
+    margin-top: 40px;   /* Espace au-dessus du titre */
+    margin-bottom: 10px; /* Espace entre le titre et les images */
+    font-size: 24px;    /* Ajuste la taille selon tes goûts */
     font-weight: bold;
 }
 
 #categorie2 {
     display: flex;
-    gap: 40px; 
-    justify-content: center; 
+    gap: 40px; /* Espace entre chaque image (augmenté pour aérer) */
+    justify-content: center; /* Centre le groupe d'images au milieu de la page */
     padding: 20px 10%;
-    flex-wrap: wrap; 
+    flex-wrap: wrap; /* Permet aux images de passer à la ligne sur mobile */
 }
 
+/* Optionnel : pour s'assurer que les images et textes sont bien centrés dans leur bloc */
 .imagesEntreprise {
     text-align: center;
-    max-width: 300px; 
+    max-width: 300px; /* Empêche les blocs de devenir trop larges */
 }
 
 .imagesEntreprise img {
-    max-width: 100%; 
+    max-width: 100%; /* L'image ne dépassera pas la largeur de son bloc */
     height: auto;
-    border-radius: 10px; 
+    border-radius: 10px; /* Petit bonus esthétique pour arrondir les coins */
 }
-
 /* ******************* FOOTER ******************** */
 footer {
   background-color:antiquewhite;
@@ -518,7 +555,6 @@ button:hover {
   transform: scale(1.5);
   transition: 0.1s;
 }
-
 /* Loader plein écran */
 .loader-container {
     position: fixed;
@@ -530,7 +566,7 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2000; 
+    z-index: 2000; /* au-dessus de tout */
 }
 
 /***************************** BARRE DE CHARGEMENT ****************************/
@@ -551,11 +587,13 @@ button:hover {
     border-radius: 8px;
 }
 
+/* Animation de progression */
 @keyframes load {
     from { width: 0%; }
     to { width: 100%; }
 }
 
+/* Transition quand on cache le loader */
 .loader-container.fade-out {
     opacity: 0;
     visibility: hidden;
@@ -565,13 +603,14 @@ button:hover {
 /* Conteneur principal */
 .reference-compound-slider {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 30px; 
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
+  gap: 30px; /* espace entre les images */
   margin: 40px auto;
-  max-width: 1200px; 
+  max-width: 1200px; /* largeur max de la grille */
   padding: 0 20px;
 }
 
+/* Chaque item (bloc image + texte) */
 .reference-compound-item {
   position: relative;
   overflow: hidden;
@@ -586,13 +625,15 @@ button:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
+/* Images */
 .reference-compound-illus-wrapper img {
   width: 100%;
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover; /* coupe pour garder la proportion */
   display: block;
 }
 
+/* Texte en overlay */
 .reference-compound-txt {
   position: absolute;
   bottom: 0;
@@ -611,43 +652,26 @@ button:hover {
   opacity: 1;
 }
 
-/* ======================================================================= */
-/* MEDIA QUERIES - TOUT CE QUI CONCERNE L'AFFICHAGE SUR TABLETTE ET MOBILE */
-/* ======================================================================= */
-
+/* Responsive */
 @media (max-width: 992px) {
   .reference-compound-slider {
     grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
   }
 }
 
-@media screen and (max-width: 768px) {
-  /* Règles pour la Timeline sur mobile */
-  .timeline::after {
-    left: 20px;
-  }
-  .timeline-item {
-    width: 100%;
-    padding-left: 60px;
-    padding-right: 25px;
-  }
-  .timeline-item::before {
-    left: 12px;
-  }
-  .timeline-item.right {
-    left: 0%;
-  }
-
-  /* LA CORRECTION POUR L'IMAGE PRINCIPALE EST ICI */
-  #imagePrincipale {
-    background-attachment: scroll !important; /* Force l'annulation de l'effet fixed */
-    background-position: center !important;   /* Force le centrage de l'image */
-    height: 400px !important;                 /* Réduit la taille pour ne pas envahir l'écran */
-  }
-}
-
 @media (max-width: 600px) {
   .reference-compound-slider {
     grid-template-columns: 1fr; /* 1 colonne sur mobile */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* ... garde tes règles pour .timeline ici ... */
+  
+  #imagePrincipale {
+    /* On redéfinit tout, on remplace 'fixed' par 'scroll', et on force avec !important */
+    background: url(images/zz.jpg) no-repeat scroll center center !important;
+    background-size: cover !important;
+    height: 400px !important; /* Important de réduire la hauteur sur mobile */
   }
 }
