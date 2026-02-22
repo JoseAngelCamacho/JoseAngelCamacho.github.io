@@ -663,3 +663,14 @@ button:hover {
     grid-template-columns: 1fr; /* 1 colonne sur mobile */
   }
 }
+
+@media screen and (max-width: 768px) {
+  /* ... garde tes règles pour .timeline ici ... */
+  
+  #imagePrincipale {
+    /* On redéfinit tout, on remplace 'fixed' par 'scroll', et on force avec !important */
+    background: url(images/zz.jpg) no-repeat scroll center center !important;
+    background-size: cover !important;
+    height: 400px !important; /* Important de réduire la hauteur sur mobile */
+  }
+}
