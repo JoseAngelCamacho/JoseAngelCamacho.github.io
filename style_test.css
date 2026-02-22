@@ -195,8 +195,6 @@ html {
   .timeline-item.right {
     left: 0%;
   }
-}
-@media (max-width: 768px) {
     .imagePrincipal {
         background-attachment: scroll; /* Annule l'effet fixed sur mobile */
         background-position: center;
