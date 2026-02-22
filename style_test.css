@@ -197,8 +197,9 @@ html {
   }
 }
 @media (max-width: 768px) {
-    .ta-classe-header {
+    .imagePrincipal {
         background-attachment: scroll; /* Annule l'effet fixed sur mobile */
+        background-position: center;
     }
 }
 
