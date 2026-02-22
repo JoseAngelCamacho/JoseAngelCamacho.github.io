@@ -196,6 +196,11 @@ html {
     left: 0%;
   }
 }
+@media (max-width: 768px) {
+    .ta-classe-header {
+        background-attachment: scroll; /* Annule l'effet fixed sur mobile */
+    }
+}
 
 
 /* **************** IMAGE PRINCIPALE ************* */
